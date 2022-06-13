@@ -1,0 +1,16 @@
+{
+  "transform": {
+    "^.+\\.(t|j)sx?$": "ts-jest"
+  },
+  "testRegex": "/test/.*\\.test\\.ts$",
+  "collectCoverageFrom": ["src/**/*.{ts,js}"],
+  "globals": {
+    "ACCESS_CONTROL_ALLOW_ORIGIN": "*",
+    "MAIL_SUBJECT": "",
+    "RECAPTCHA_SECRET": "",
+    "RECIPIENT_EMAIL": "",
+    "RECIPIENT_NAME": "",
+    "SENDGRID_API_KEY": "",
+    "SENTRY_DSN": ""
+  }
+}

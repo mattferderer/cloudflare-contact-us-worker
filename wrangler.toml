@@ -1,0 +1,19 @@
+name = "cloudflare-contact-us-worker"
+type = "javascript"
+zone_id = ""
+account_id = ""
+route = ""
+workers_dev = true
+compatibility_date = "2022-02-18"
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
+[env.dev]
+ACCESS_CONTROL_ALLOW_ORIGIN = 'http://localhost:8000'
+SENDGRID_API_KEY = 'SG.abc12345789.123456789abcdefghijklmnopqrstuvwxyzExample'
+RECIPIENT_NAME = 'Your Name'
+RECIPIENT_EMAIL = 'email@example.com'
+SENTRY_DSN = 'https://123456789EXAMPLE@11111111EXAMPLE.ingest.sentry.io/1234567'
