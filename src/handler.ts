@@ -52,14 +52,15 @@ const handleOptionsRequest = (request: Request): Response => {
       }
     });
   }
-  return invalidRequestResponse();
+  return invalidRequestResponse('', 204);
 }
 
-const invalidRequestResponse = (msg?: string): Response => {
+const invalidRequestResponse = (msg?: string, statusCode?: number): Response => {
   const responseMessage = msg || 'Invalid Request';
+  const status = statusCode || 400;
   const response = new Response(responseMessage,
     {
-      status: 400,
+      status
     });
   response.headers.set('Access-Control-Allow-Origin', ACCESS_CONTROL_ALLOW_ORIGIN);
   return response;
