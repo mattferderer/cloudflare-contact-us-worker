@@ -45,8 +45,8 @@ jobs:
             SENTRY_DSN
         env:
           MAIL_SUBJECT: Contact Request
-          RECIPIENT_NAME: Integrative Wellness
-          RECIPIENT_EMAIL: integrativewellness@midconetwork.com
+          RECIPIENT_NAME: PLACE_RECIPIENT'S_NAME_HERE
+          RECIPIENT_EMAIL: PLACE_RECIPIENT'S_EMAIL_HERE
           ACCESS_CONTROL_ALLOW_ORIGIN: ${{ secrets.CF_ACCESS_CONTROL_ALLOW_ORIGIN }}
           SENDGRID_API_KEY: ${{ secrets.CF_SENDGRID_API_KEY }}
           RECAPTCHA_SECRET: ${{ secrets.CF_RECAPTCHA_SECRET }}
