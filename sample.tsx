@@ -68,7 +68,7 @@ const ContactPage = () => {
             <div className="rounded overflow-hidden shadow-lg py-6 px-6">
                 <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
                 <div className="mt-12">
-                    <form action="#" method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                    <form onSubmit={e => handleSubmit(e)} action="#" method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                                 Name
@@ -116,11 +116,9 @@ const ContactPage = () => {
                         </div>
                         <div className="sm:col-span-2">
                             <button
-                                data-sitekey={GOOGLE_CAPTCHA_KEY}
                                 type="submit"
                                 disabled={showAlert}
                                 className={`w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white focus:outline-none focus:ring-2 bg-green-900  focus:ring-offset-2 focus:ring-green-00 ${showAlert ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer hover:bg-green-700'}`}
-                                onClick={e => handleSubmit(e)}
                             >
                                 Let's talk
                             </button>
@@ -132,7 +130,7 @@ const ContactPage = () => {
     )
 }
 
-function Alert(props: React.PropsWithChildren<{ success: Boolean, message: String, onDismiss: () => void }>) {
+function Alert(props: React.PropsWithChildren<{ success: boolean, message: string, onDismiss: () => void }>) {
     return (
         <div className="fixed bottom-0 inset-x-0 pb-2 sm:pb-5">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
